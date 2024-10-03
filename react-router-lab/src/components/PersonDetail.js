@@ -18,10 +18,12 @@ const PersonDetail = () => {
   useEffect(() => {
     const fetchPerson = async () => {
       try {
+        console.log('Fetching person data...');
         const response = await axios.get(`${API_URL}/${id}`);
+        console.log('Person data:', response.data);
         setPerson(response.data);
       } catch (error) {
-        console.error('Error fetching person:', error);
+        console.error('Error fetching person:', error.response || error.message);
         setShowNotification({ type: 'error', text: 'Error loading person details.' });
       }
     };
@@ -43,8 +45,13 @@ const PersonDetail = () => {
     setShowNotification(null);
   };
 
-  if (!person) return <div className="box-container">Loading...</div>;
+  if (!person && !showNotification) {
+    return <div className="box-container">Loading...</div>;
+  }
 
+  if (!person && showNotification) {
+    return <div className="box-container">Error loading person details.</div>;
+  }
 
   return (
     <div className="box-container">
@@ -53,7 +60,7 @@ const PersonDetail = () => {
         <p>Age: {person.age}</p>
       </div>
       <div className="person-actions">
-        <Link to={`/person/${person.id}/edit`} className="btn btn-update">Edit</Link>
+        <Link to={`/edit/${person.id}`} className="btn btn-update">Edit</Link>
         <button onClick={deletePerson} className="btn btn-delete">Delete</button>
         <Link to="/" className="btn btn-back">Back to Home</Link>
       </div>
