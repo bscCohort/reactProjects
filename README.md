@@ -1,3 +1,13 @@
+### Full Stack App
+
+The major focus of this lab project is to gop through basic functionalities of
+
+- React
+- External CSS
+- Axios
+- React Router DOM
+- Dotenv file
+
 ### How to run this project
 
 ```
