@@ -1,12 +1,21 @@
-### Full Stack App
+## React Router Lab
 
-The major focus of this lab project is to gop through basic functionalities of
+The major focus of this lab project is to go through basic functionalities of
 
-- React
+- React Components
+- React Hooks
 - External CSS
 - Axios
 - React Router DOM
 - Dotenv file
+
+### Environment Setup
+
+- Install the packages
+- Setup the DB
+- Setup the dotenv file
+- Setup the component directory
+- Setup the styling directory
 
 ### How to run this project
 
@@ -39,10 +48,3 @@ npm run app
 
   ![alt text](image-3.png)
 
-### Environment Setup
-
-- Install the packages
-- Setup the DB
-- Setup the dotenv file
-- Setup the component directory
-- Setup the styling directory
